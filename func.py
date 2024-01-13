@@ -34,3 +34,14 @@ def sort_data(i) -> list:
             sorted_data.append(n)
     sorted_data.sort(key=lambda x: x["date"], reverse=True)
     return sorted_data
+
+
+def five_last() -> list:
+    """
+    Функция создает саписок 5 последних операций
+    :return: five_last_operations = sort_operation_ex[:5]
+    """
+    five_last_operations = []
+    sort_operation_ex = sort_data(is_operations_done(load_operations()))
+    five_last_operations.append(sort_operation_ex[:5])
+    return five_last_operations
