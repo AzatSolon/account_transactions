@@ -28,5 +28,9 @@ def sort_data(i) -> list:
     Возвращает отсортированный по дате список операций
     :return: list_sort_data
     """
-    n = is_operations_done(i)
-    y = sorted(n, key=lambda x: x.get('data'), reverse=True)
+    sorted_data = []
+    for n in i:
+        if n.get("date"):
+            sorted_data.append(n)
+    sorted_data.sort(key=lambda x: x["date"], reverse=True)
+    return sorted_data
