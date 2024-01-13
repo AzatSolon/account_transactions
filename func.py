@@ -1,5 +1,4 @@
 import json
-from datetime import datetime
 
 
 def load_operations() -> list:
@@ -29,6 +28,5 @@ def sort_data(i) -> list:
     Возвращает отсортированный по дате список операций
     :return: list_sort_data
     """
-    format_data = "%Y-%m-%dT%H:%M:%S.%f"
-    list_sorted_data = sorted(i, key=lambda x: datetime.strptime(x['date'], format_data))
-    return list_sorted_data
+    n = is_operations_done(i)
+    y = sorted(n, key=lambda x: x.get('data'), reverse=True)
