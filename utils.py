@@ -71,7 +71,3 @@ def get_amount(n) -> list:
         amount = f'{item["operationAmount"]["amount"]} {item["operationAmount"]["currency"]["name"]}'
         amount_list.append(amount)
     return amount_list
-
-
-if __name__ == '__main__':
-    print(get_amount(five_last_ex))
