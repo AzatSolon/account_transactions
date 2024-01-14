@@ -1,4 +1,4 @@
-from utils import *
+from scr.utils import *
 
 
 def main():

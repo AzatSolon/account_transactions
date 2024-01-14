@@ -6,7 +6,7 @@ def load_operations() -> list:
     Возвращает список из файла "operations.json"
     :return: list of operations
     """
-    with open("operations.json", "r", encoding="utf-8") as file:
+    with open("../operations.json", "r", encoding="utf-8") as file:
         data_list = json.load(file)
         return data_list
 

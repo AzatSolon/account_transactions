@@ -1,4 +1,4 @@
-from func import *
+from scr.func import *
 from datetime import datetime
 
 five_last_ex = five_last(sort_data(is_operations_done(load_operations())))
