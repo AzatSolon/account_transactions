@@ -50,7 +50,12 @@ def shadow_from(n) -> list:
     shadow_list_from = []
     for item in n:
         if item.get("from"):
-            shadow_list_from.append(item.get("from"))
+            shadow = item["from"]
+            if "a" in shadow:
+                shadow = f"{shadow[:-16]}** **** {shadow[-4:]}"
+            else:
+                shadow = f"{shadow[:4]} **{shadow[-4:]}"
+            shadow_list_from.append(shadow)
         else:
             shadow_list_from.append('Открытие вклада')
     return shadow_list_from
