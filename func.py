@@ -36,12 +36,16 @@ def sort_data(i) -> list:
     return sorted_data
 
 
-def five_last() -> list:
+def five_last(i) -> list:
     """
     Функция создает саписок 5 последних операций
     :return: five_last_operations = sort_operation_ex[:5]
     """
     five_last_operations = []
-    sort_operation_ex = sort_data(is_operations_done(load_operations()))
-    five_last_operations.append(sort_operation_ex[:5])
+    count = 0
+    for n in i:
+        five_last_operations.append(n)
+        count += 1
+        if count == 5:
+            break
     return five_last_operations
