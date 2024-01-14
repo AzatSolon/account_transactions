@@ -10,7 +10,7 @@ def main():
              62814.53 руб."
     """
     x = 0
-    while x <= 4:
+    while x <= len(five_last_ex) - 1:
         print(f"{date_format(five_last_ex)[x]} {get_description(five_last_ex)[x]}\n"
               f"{shadow_from(five_last_ex)[x]} -> {shadow_to(five_last_ex)[x]}"
               f"\n{get_amount(five_last_ex)[x]}\n")
