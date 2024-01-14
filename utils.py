@@ -4,13 +4,13 @@ from datetime import datetime
 five_last_ex = five_last(sort_data(is_operations_done(load_operations())))
 
 
-def shadow_to(accaunt):
+def shadow_to(n):
     """
     Функция возвращает замаскuрованный список счетов
     :return:['Счет **0000',...]
     """
     disguise_list = []
-    for item in accaunt:
+    for item in n:
         accaunt_sort = item['to']
         accaunt_sort_shadow = f"{accaunt_sort[:4]} **{accaunt_sort[-4:]}"
         disguise_list.append(accaunt_sort_shadow)
@@ -24,8 +24,8 @@ def date_format(n):
     :return: list ['%d.%m.%Y', '%d.%m.%Y'...]
     """
     format_date_list = []
-    for i in n:
-        date = datetime.strptime(i.get("date"), "%Y-%m-%dT%H:%M:%S.%f").strftime('%d.%m.%Y')
+    for item in n:
+        date = datetime.strptime(item.get("date"), "%Y-%m-%dT%H:%M:%S.%f").strftime('%d.%m.%Y')
         format_date_list.append(date)
     return format_date_list
 
