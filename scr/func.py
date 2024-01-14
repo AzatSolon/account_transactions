@@ -4,6 +4,7 @@ import json
 def load_operations() -> list:
     """
     Возвращает список из файла "operations.json"
+    :rtype: list
     :return: list of operations
     """
     with open("../operations.json", "r", encoding="utf-8") as file:
@@ -11,16 +12,16 @@ def load_operations() -> list:
         return data_list
 
 
-def is_operations_done(i) -> list:
+def operations_done(i) -> list:
     """
     Возвращает список по ключу "Executed"
     :return: list
     """
-    operations_done = []
+    operations_ex = []
     for n in i:
         if n.get("state") == "EXECUTED":
-            operations_done.append(n)
-    return operations_done
+            operations_ex.append(n)
+    return operations_ex
 
 
 def sort_data(i) -> list:
