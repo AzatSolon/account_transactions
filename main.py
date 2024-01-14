@@ -4,7 +4,7 @@ from datetime import datetime
 five_last_ex = five_last(sort_data(is_operations_done(load_operations())))
 
 
-def disguise(accaunt):
+def shadow_to(accaunt):
     """
     Функция возвращает замаскuрованный список счетов
     :return:['Счет **0000',...]
@@ -43,7 +43,7 @@ def get_description(n) -> list:
 
 def shadow_from(n) -> list:
     """
-    Функция формирует список счетов отправитея в случае их отсутствия
+    Функция формирует список замаскированных счетов отправитея в случае их отсутствия
     выводит "Открытие вклада"
     :return:
     """
@@ -61,5 +61,17 @@ def shadow_from(n) -> list:
     return shadow_list_from
 
 
+def get_amount(n) -> list:
+    """
+    Функция возвращает список размера операции и валюту
+    :return: ['31234.23 USD', '31234.23 руб',...]
+    """
+    amount_list = []
+    for item in n:
+        amount = f'{item["operationAmount"]["amount"]} {item["operationAmount"]["currency"]["name"]}'
+        amount_list.append(amount)
+    return amount_list
+
+
 if __name__ == '__main__':
-    print(shadow_from(five_last_ex))
+    print(get_amount(five_last_ex))
